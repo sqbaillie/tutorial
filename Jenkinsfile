@@ -1,5 +1,5 @@
 pipeline {
-    agent { docker { image 'python:3.6.14' } }
+    agent { docker { image 'python' } }
     stages {
         stage('build') {
             steps {
