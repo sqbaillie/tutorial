@@ -1,6 +1,6 @@
 pipeline {
-    agent java-docker-slave
-//  agent any
+    agent any
+//  agent java-docker-slave
 //  agent { docker { image 'python' } }
     stages {
         stage('agentme') {
