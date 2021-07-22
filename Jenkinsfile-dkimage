@@ -2,7 +2,7 @@ node {
     checkout scm
 
     docker.withServer('tcp://192.168.64.1:2375') { 
-        docker.image 'alpine:latest' {
+        docker.image('alpine:latest') {
             sh 'hostname'
         }
     }
