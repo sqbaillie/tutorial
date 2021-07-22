@@ -1,12 +1,9 @@
-pipeline {
-    agent {
-        docker.withServer('tcp://192.168.64.1:2375') { docker.image 'node:14-alpine' }
-    }
-    stages {
-        stage('Test') {
-            steps {
-                sh 'node --version'
-            }
+node {
+    checkout scm
+
+    docker.withServer('tcp://192.168.64.1:2375') { 
+        docker.image 'node:14-alpine' {
+            sh 'node --version'
         }
     }
 }
