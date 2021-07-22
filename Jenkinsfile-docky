@@ -1,0 +1,18 @@
+pipeline {
+    agent { docker { image 'python' } }
+    stages {
+        stage('agentme') {
+            steps {
+                sh 'hostname'
+                sh 'hostname -I'
+                sh '[ -f /.dockerenv ] && echo "Es ist ein Dockerwelt" || echo "Es ist kein Dockerwelt"'
+		sh 'whoami'
+		sh 'id'
+            }
+        stage('build') {
+            steps {
+                sh 'python --version'
+            }
+        }
+    }
+}
