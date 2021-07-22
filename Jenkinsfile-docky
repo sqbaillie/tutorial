@@ -9,6 +9,7 @@ pipeline {
 		sh 'whoami'
 		sh 'id'
             }
+        }
         stage('build') {
             steps {
                 sh 'python --version'
